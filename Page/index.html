@@ -452,6 +452,29 @@
         gap: 10px;
       }
 
+      .product-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .quantity-input {
+        width: 58px;
+        height: 32px;
+        padding: 0 5px;
+        border: 1px solid rgb(51 43 40 / 20%);
+        border-radius: 2px;
+        background: var(--white);
+        color: var(--ink);
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .quantity-input:focus-visible {
+        outline: 2px solid #9c6a63;
+        outline-offset: 2px;
+      }
+
       .price {
         font-size: 12px;
         font-weight: 700;
@@ -898,6 +921,11 @@
           gap: 4px;
         }
 
+        .product-actions {
+          width: 100%;
+          justify-content: space-between;
+        }
+
         .add-button {
           padding-left: 0;
         }
@@ -1047,7 +1075,10 @@
                 <p class="product-detail">A scented candle, plush keychain, mini bouquet, mug, and sticker set</p>
                 <div class="product-bottom">
                   <span class="price">329.000 ₫</span>
-                  <button class="add-button" type="button" data-product="A Box of Joy" data-price="329000" data-image="../assets/products/a-box-of-joy.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for A Box of Joy" />
+                    <button class="add-button" type="button" data-product="A Box of Joy" data-price="329000" data-image="../assets/products/a-box-of-joy.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1065,7 +1096,10 @@
                 <p class="product-detail">A scented candle, greeting card, wooden candle coaster, and dried pine cone</p>
                 <div class="product-bottom">
                   <span class="price">249.000 ₫</span>
-                  <button class="add-button" type="button" data-product="A Quiet Moment" data-price="249000" data-image="../assets/products/a-quiet-moment.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for A Quiet Moment" />
+                    <button class="add-button" type="button" data-product="A Quiet Moment" data-price="249000" data-image="../assets/products/a-quiet-moment.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1083,7 +1117,10 @@
                 <p class="product-detail">A scented candle, greeting card, mini teddy bear, and wax flower</p>
                 <div class="product-bottom">
                   <span class="price">279.000 ₫</span>
-                  <button class="add-button" type="button" data-product="With All My Love" data-price="279000" data-image="../assets/products/with-all-my-love.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for With All My Love" />
+                    <button class="add-button" type="button" data-product="With All My Love" data-price="279000" data-image="../assets/products/with-all-my-love.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1110,7 +1147,10 @@
                 <p class="product-detail">Soft lavender and creamy vanilla for a calming end to the day</p>
                 <div class="product-bottom">
                   <span class="price">199.000 ₫</span>
-                  <button class="add-button" type="button" data-product="MELT INTO CALM" data-price="199000" data-image="../assets/products/melt-into-calm.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for MELT INTO CALM" />
+                    <button class="add-button" type="button" data-product="MELT INTO CALM" data-price="199000" data-image="../assets/products/melt-into-calm.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1128,7 +1168,10 @@
                 <p class="product-detail">Light floral notes with a hint of sweet fruit</p>
                 <div class="product-bottom">
                   <span class="price">189.000 ₫</span>
-                  <button class="add-button" type="button" data-product="YOU MAKE ME SMILE" data-price="189000" data-image="../assets/products/you-make-me-smile.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for YOU MAKE ME SMILE" />
+                    <button class="add-button" type="button" data-product="YOU MAKE ME SMILE" data-price="189000" data-image="../assets/products/you-make-me-smile.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1142,7 +1185,10 @@
                 <p class="product-detail">Fresh green notes, soft woods, and a touch of sweetness</p>
                 <div class="product-bottom">
                   <span class="price">229.000 ₫</span>
-                  <button class="add-button" type="button" data-product="ALWAYS BY YOUR SIDE" data-price="229000" data-image="../assets/products/always-by-your-side.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for ALWAYS BY YOUR SIDE" />
+                    <button class="add-button" type="button" data-product="ALWAYS BY YOUR SIDE" data-price="229000" data-image="../assets/products/always-by-your-side.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1156,7 +1202,10 @@
                 <p class="product-detail">Romantic rose and peony with soft vanilla</p>
                 <div class="product-bottom">
                   <span class="price">219.000 ₫</span>
-                  <button class="add-button" type="button" data-product="MADE WITH LOVE" data-price="219000" data-image="../assets/products/made-with-love.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for MADE WITH LOVE" />
+                    <button class="add-button" type="button" data-product="MADE WITH LOVE" data-price="219000" data-image="../assets/products/made-with-love.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1170,7 +1219,10 @@
                 <p class="product-detail">Sweet orange, white florals, and warm vanilla</p>
                 <div class="product-bottom">
                   <span class="price">219.000 ₫</span>
-                  <button class="add-button" type="button" data-product="A LITTLE WARMTH" data-price="219000" data-image="../assets/products/a-little-warmth.jpg">Add to bag +</button>
+                  <div class="product-actions">
+                    <input class="quantity-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity for A LITTLE WARMTH" />
+                    <button class="add-button" type="button" data-product="A LITTLE WARMTH" data-price="219000" data-image="../assets/products/a-little-warmth.jpg">Add to bag +</button>
+                  </div>
                 </div>
               </div>
             </article>
@@ -1298,6 +1350,14 @@
 
       document.querySelectorAll(".add-button").forEach((button) => {
         button.addEventListener("click", () => {
+          const quantityInput = button.parentElement.querySelector(".quantity-input");
+          const requestedQty = quantityInput.valueAsNumber;
+          if (!Number.isInteger(requestedQty) || requestedQty < 1 || requestedQty > 99) {
+            showToast("Choose a quantity between 1 and 99.");
+            quantityInput.focus();
+            return;
+          }
+
           const cart = readCart();
           if (!cart) {
             showToast("Your bag could not be loaded. Please refresh and try again.");
@@ -1305,13 +1365,18 @@
           }
           const existingItem = cart.find((item) => item.name === button.dataset.product);
           if (existingItem) {
-            existingItem.qty = Math.min((Number(existingItem.qty) || 0) + 1, 99);
+            const currentQty = Math.max(0, Math.min(99, Math.floor(Number(existingItem.qty) || 0)));
+            if (currentQty + requestedQty > 99) {
+              showToast("You can add up to 99 of each product.");
+              return;
+            }
+            existingItem.qty = currentQty + requestedQty;
           } else {
             cart.push({
               name: button.dataset.product,
               price: Number(button.dataset.price),
               image: button.dataset.image,
-              qty: 1,
+              qty: requestedQty,
             });
           }
 
@@ -1325,7 +1390,8 @@
           }
 
           updateBagCount();
-          showToast(`${button.dataset.product} added to your bag.`);
+          quantityInput.value = "1";
+          showToast(`${requestedQty} × ${button.dataset.product} added to your bag.`);
         });
       });
 
