@@ -23,8 +23,8 @@
     <div class="announcement">A softer kind of everyday <span>— miễn phí vận chuyển cho đơn từ 600.000 ₫</span></div>
     <header>
       <nav aria-label="Main navigation">
-        <a class="brand" href="./gioithieu.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
-        <a class="nav-link" href="./gioithieu.html#shop">Keep shopping</a>
+        <a class="brand" href="./index.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
+        <a class="nav-link" href="./index.html#shop">Keep shopping</a>
       </nav>
     </header>
     <main>
@@ -83,7 +83,7 @@
         }
         const items = Array.isArray(selection) ? cart.filter((item) => selection.includes(item.name)) : cart;
         if (!items.length) {
-          content.innerHTML = '<div class="empty"><h2>Your bag is empty.</h2><p>Add a candle before heading to checkout.</p><a class="button" href="./gioithieu.html#shop">Explore candles</a></div>';
+          content.innerHTML = '<div class="empty"><h2>Your bag is empty.</h2><p>Add a candle before heading to checkout.</p><a class="button" href="./index.html#shop">Explore candles</a></div>';
           return;
         }
         const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);

@@ -19,8 +19,8 @@
     <div class="announcement">A softer kind of everyday <span>— MELTI order confirmation</span></div>
     <header>
       <nav aria-label="Main navigation">
-        <a class="brand" href="./gioithieu.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
-        <a class="nav-link" href="./gioithieu.html#shop">Shop candles</a>
+        <a class="brand" href="./index.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
+        <a class="nav-link" href="./index.html#shop">Shop candles</a>
       </nav>
     </header>
     <main id="receipt" class="receipt" aria-live="polite">
@@ -61,10 +61,10 @@
             <p class="address">${escapeHtml(customer.name)}<br>${escapeHtml(customer.address)}<br>${escapeHtml(customer.city)}${customer.postalCode ? `, ${escapeHtml(customer.postalCode)}` : ""}<br>${escapeHtml(customer.country)}<br>${escapeHtml(customer.phone)}<br>${escapeHtml(customer.email)}</p>
             ${customer.notes ? `<p class="address"><strong>Delivery note:</strong> ${escapeHtml(customer.notes)}</p>` : ""}
           </section>
-          <div class="actions"><a class="button" href="./gioithieu.html#shop">Keep exploring</a><button class="button secondary" type="button" onclick="window.print()">Print confirmation</button></div>`;
+          <div class="actions"><a class="button" href="./index.html#shop">Keep exploring</a><button class="button secondary" type="button" onclick="window.print()">Print confirmation</button></div>`;
       } catch (error) {
         console.error("Unable to load the MELTI order confirmation.", error);
-        details.innerHTML = '<div class="error"><p class="lead">We couldn’t find this order in the current browser. It may have been placed in a different browser or its local data may have been cleared.</p><a class="button" href="./gioithieu.html#shop">Return to the shop</a></div>';
+        details.innerHTML = '<div class="error"><p class="lead">We couldn’t find this order in the current browser. It may have been placed in a different browser or its local data may have been cleared.</p><a class="button" href="./index.html#shop">Return to the shop</a></div>';
       }
     </script>
   </body>

@@ -22,10 +22,10 @@
     <div class="announcement">A softer kind of everyday <span>— miễn phí vận chuyển cho đơn từ 600.000 ₫</span></div>
     <header>
       <nav aria-label="Main navigation">
-        <a class="brand" href="./gioithieu.html" aria-label="MELTI home">
+        <a class="brand" href="./index.html" aria-label="MELTI home">
           <img src="../assets/melti-mark.png" alt="" />MELTI
         </a>
-        <a class="nav-link" href="./gioithieu.html#shop">Continue shopping</a>
+        <a class="nav-link" href="./index.html#shop">Continue shopping</a>
       </nav>
     </header>
     <main>
@@ -82,13 +82,13 @@
       function render() {
         const cart = getCart();
         if (cart === null) {
-          content.innerHTML = '<div class="empty"><h2>We could not load your bag.</h2><p>Please refresh this page or check your browser storage settings.</p><a class="button" href="./gioithieu.html#shop">Back to the shop</a></div>';
+          content.innerHTML = '<div class="empty"><h2>We could not load your bag.</h2><p>Please refresh this page or check your browser storage settings.</p><a class="button" href="./index.html#shop">Back to the shop</a></div>';
           return;
         }
         const count = cart.reduce((sum, item) => sum + item.qty, 0);
         document.querySelector("#item-count").textContent = count ? ` (${count})` : "";
         if (!cart.length) {
-          content.innerHTML = '<div class="empty"><h2>Your bag is taking a little break.</h2><p>Find a candle that feels like you.</p><a class="button" href="./gioithieu.html#shop">Explore candles</a></div>';
+          content.innerHTML = '<div class="empty"><h2>Your bag is taking a little break.</h2><p>Find a candle that feels like you.</p><a class="button" href="./index.html#shop">Explore candles</a></div>';
           return;
         }
         const savedSelection = JSON.parse(sessionStorage.getItem("meltiCheckoutSelection") || "null");
@@ -126,7 +126,7 @@
               <p class="hint">${selectedSubtotal > 0 && selectedSubtotal < FREE_SHIPPING_THRESHOLD ? `Thêm ${money(FREE_SHIPPING_THRESHOLD - selectedSubtotal)} vào đơn đã chọn để được miễn phí vận chuyển.` : selectedSubtotal >= FREE_SHIPPING_THRESHOLD ? "Đơn hàng được miễn phí vận chuyển." : "Vui lòng chọn ít nhất một sản phẩm để tiếp tục."}</p>
               <button class="button" type="button" data-action="checkout" ${selectedSubtotal === 0 ? "disabled" : ""}>Continue to checkout</button>
               <p class="notice" id="cart-notice" role="status" aria-live="polite"></p>
-              <a class="continue" href="./gioithieu.html#shop">Continue shopping</a>
+              <a class="continue" href="./index.html#shop">Continue shopping</a>
             </aside>
           </div>`;
         content.querySelectorAll("[data-action]").forEach((control) => {
