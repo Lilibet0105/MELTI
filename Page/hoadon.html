@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFF8F1" />
+    <link rel="icon" href="../assets/melti-mark.png" type="image/png" />
+    <title>Order confirmation | MELTI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{--pink:#F8C6C6;--cream:#FFF8F1;--sand:#EEDCCF;--butter:#F8D7A7;--ink:#332B28;--muted:#82736D;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+      *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.announcement{padding:10px 20px;background:var(--ink);color:var(--cream);text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.announcement span{color:var(--butter)}header{border-bottom:1px solid #332B2814}nav{width:min(980px,calc(100% - 44px));height:74px;margin:auto;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px;letter-spacing:.16em}.brand img{width:48px;height:48px;object-fit:contain}.nav-link{font-size:11px;font-weight:600}.receipt{width:min(700px,calc(100% - 40px));margin:56px auto 80px;padding:clamp(23px,6vw,52px);background:#fffdfb;border:1px solid #332B2812}.success-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:#F8D7A755;color:#75554a;font-size:25px}.eyebrow{margin:21px 0 7px;color:#9c6a63;font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}h1,h2,h3{font-family:var(--serif);font-weight:500}h1{margin:0;font-size:clamp(36px,6vw,53px);letter-spacing:-.04em}.lead{margin:10px 0;color:var(--muted);font-size:12px;line-height:1.75}.order-id{display:inline-block;margin:15px 0 24px;padding:9px 12px;background:var(--cream);font-size:11px;font-weight:700;letter-spacing:.05em}.status{margin:0 0 26px;padding:14px;background:#F8D7A733;color:#665752;font-size:11px;line-height:1.65}.section{padding:21px 0;border-top:1px solid #332B281A}.section h2{margin:0 0 14px;font-size:21px}.line{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:11px 0;font-size:11px}.line small{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}.amount{font-weight:600;white-space:nowrap}.total{margin-top:17px;padding-top:15px;border-top:1px solid #332B2820;font-size:14px;font-weight:700}.address{color:#665752;font-size:11px;line-height:1.8}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.button{min-height:45px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:white;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}.button.secondary{background:transparent;color:var(--ink)}.button:hover{background:#9c6a63;border-color:#9c6a63;color:white}.error{text-align:center}.error .button{margin-top:12px}.footer{padding:22px;text-align:center;background:var(--ink);color:#fff8f1a8;font-size:10px}
+      @media print{body{background:white}.announcement,header,.actions,.footer{display:none!important}.receipt{width:100%;margin:0;padding:16px;border:0}.status{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+    </style>
+  </head>
+  <body>
+    <div class="announcement">A softer kind of everyday <span>— MELTI order confirmation</span></div>
+    <header>
+      <nav aria-label="Main navigation">
+        <a class="brand" href="./gioithieu.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
+        <a class="nav-link" href="./gioithieu.html#shop">Shop candles</a>
+      </nav>
+    </header>
+    <main id="receipt" class="receipt" aria-live="polite">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">Order received</p>
+      <h1>Thank you.</h1>
+      <p class="lead">We’ve saved your order details in this browser.</p>
+      <div id="order-details"></div>
+    </main>
+    <footer class="footer">© <span id="year"></span> MELTI · Thoughtful candles for slower days.</footer>
+    <script>
+      const money = (amount) => new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND", maximumFractionDigits: 0 }).format(amount);
+      const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      })[character]);
+      const details = document.querySelector("#order-details");
+      document.querySelector("#year").textContent = new Date().getFullYear();
+
+      try {
+        const orderId = new URLSearchParams(window.location.search).get("order");
+        const orders = JSON.parse(localStorage.getItem("meltiOrders") || "[]");
+        const order = Array.isArray(orders) ? orders.find((saved) => saved.id === orderId) : null;
+        if (!order) throw new Error("Order not found in this browser.");
+        const customer = order.customer || {};
+        const bankTransfer = order.paymentMethod === "bank_transfer";
+        details.innerHTML = `
+          <div class="order-id">ORDER ${escapeHtml(order.id)}</div>
+          <p class="status"><strong>${bankTransfer ? "Payment pending" : "Order confirmed"}</strong><br>${bankTransfer
+            ? "Please contact hello@melti.com for bank transfer details and include your order number as the payment reference. Your order is not marked as paid until the transfer is confirmed."
+            : "Payment is due to the courier when your order is delivered."}</p>
+          <section class="section"><h2>Items</h2>
+            ${order.items.map((item) => `<div class="line"><span>${escapeHtml(item.name)}<small>Quantity: ${escapeHtml(item.qty)}</small></span><span class="amount">${money(Number(item.price) * Number(item.qty))}</span></div>`).join("")}
+            <div class="line"><span>Subtotal</span><span class="amount">${money(order.subtotal)}</span></div>
+            <div class="line"><span>Shipping</span><span class="amount">${Number(order.shipping) ? money(order.shipping) : "Free"}</span></div>
+            <div class="line total"><span>Total</span><span>${money(order.total)}</span></div>
+          </section>
+          <section class="section"><h2>Delivering to</h2>
+            <p class="address">${escapeHtml(customer.name)}<br>${escapeHtml(customer.address)}<br>${escapeHtml(customer.city)}${customer.postalCode ? `, ${escapeHtml(customer.postalCode)}` : ""}<br>${escapeHtml(customer.country)}<br>${escapeHtml(customer.phone)}<br>${escapeHtml(customer.email)}</p>
+            ${customer.notes ? `<p class="address"><strong>Delivery note:</strong> ${escapeHtml(customer.notes)}</p>` : ""}
+          </section>
+          <div class="actions"><a class="button" href="./gioithieu.html#shop">Keep exploring</a><button class="button secondary" type="button" onclick="window.print()">Print confirmation</button></div>`;
+      } catch (error) {
+        console.error("Unable to load the MELTI order confirmation.", error);
+        details.innerHTML = '<div class="error"><p class="lead">We couldn’t find this order in the current browser. It may have been placed in a different browser or its local data may have been cleared.</p><a class="button" href="./gioithieu.html#shop">Return to the shop</a></div>';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFF8F1" />
+    <link rel="icon" href="../assets/melti-mark.png" type="image/png" />
+    <title>Checkout | MELTI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{--pink:#F8C6C6;--cream:#FFF8F1;--sand:#EEDCCF;--butter:#F8D7A7;--ink:#332B28;--muted:#82736D;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+      *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}
+      .announcement{padding:10px 20px;background:var(--ink);color:var(--cream);text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.announcement span{color:var(--butter)}
+      header{position:sticky;top:0;z-index:5;border-bottom:1px solid #332B2814;background:#FFF8F1F2;backdrop-filter:blur(14px)}nav{width:min(1100px,calc(100% - 44px));height:74px;margin:auto;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px;letter-spacing:.16em}.brand img{width:48px;height:48px;object-fit:contain}.nav-link{font-size:12px;font-weight:600;color:#61534e}
+      main{width:min(1100px,calc(100% - 44px));min-height:70vh;margin:auto;padding:51px 0 84px}.steps{display:flex;align-items:center;gap:10px;margin-bottom:32px;color:var(--muted);font-size:10px}.step-active{color:#9c6a63;font-weight:700}.step-divider{width:28px;height:1px;background:#332B2830}.eyebrow{color:#9c6a63;font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}h1,h2,h3{font-family:var(--serif);font-weight:500}h1{margin:9px 0 4px;font-size:clamp(38px,5vw,53px);letter-spacing:-.04em}.intro{margin:0 0 28px;color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(285px,.8fr);align-items:start;gap:52px}.block{margin-bottom:26px;padding:23px;background:#fffdfb;border:1px solid #332B2812}.block h2,.summary h2{margin:0 0 18px;font-size:22px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:600}.field input,.field textarea{width:100%;padding:12px;border:1px solid #332B2828;border-radius:0;background:#fffdfb;color:var(--ink);font-size:12px;outline:none}.field input:focus,.field textarea:focus{border-color:#9c6a63;box-shadow:0 0 0 2px #F8C6C655}.field textarea{min-height:76px;resize:vertical}.payment-option{position:relative;margin:10px 0;padding:14px;border:1px solid #332B2828;background:#fffdfb;cursor:pointer}.payment-option.selected{border-color:#9c6a63;background:#fff9f6}.payment-option label{display:flex;align-items:flex-start;gap:10px;cursor:pointer}.payment-option input{margin:3px 0 0;accent-color:#9c6a63}.payment-option strong{display:block;font-size:12px}.payment-option small{display:block;margin-top:4px;color:var(--muted);font-size:10px;line-height:1.55}.payment-note{margin:10px 0 0;padding:12px;background:#F8D7A733;color:#665752;font-size:10px;line-height:1.65}.summary{position:sticky;top:100px;padding:22px;background:#fffdfb;border:1px solid #332B2812}.summary-item{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #332B2815}.summary-item:last-of-type{border-bottom:0}.summary-item img{width:52px;height:59px;object-fit:cover;background:var(--sand)}.summary-product{min-width:0;flex:1}.summary-product strong{display:block;font-family:var(--serif);font-size:14px;font-weight:500}.summary-product small{display:block;margin-top:4px;color:var(--muted);font-size:9px}.summary-price{font-size:11px;font-weight:600;white-space:nowrap}.summary-row{display:flex;justify-content:space-between;gap:12px;margin:12px 0;color:#665752;font-size:11px}.summary-row.total{margin:16px 0 0;padding-top:14px;border-top:1px solid #332B2820;color:var(--ink);font-size:14px;font-weight:700}.shipping-note{color:#9c6a63;font-size:10px;line-height:1.5}.submit{width:100%;min-height:48px;margin-top:18px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}.submit:hover{background:transparent;color:var(--ink)}.back{display:block;margin-top:15px;text-align:center;color:#77645e;font-size:10px;text-decoration:underline}.error{min-height:17px;margin:11px 0 0;color:#9c3f3f;font-size:11px}.empty{padding:38px 20px;background:#fffdfb;text-align:center}.empty h2{font-size:26px}.empty p{color:var(--muted);font-size:12px}.button{display:inline-flex;min-height:44px;padding:0 22px;align-items:center;justify-content:center;background:var(--ink);color:white;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.footer{padding:22px;text-align:center;background:var(--ink);color:#fff8f1a8;font-size:10px}
+      @media(max-width:760px){main{padding:38px 0 60px}.layout{grid-template-columns:1fr;gap:20px}.summary{position:static;grid-row:1}.block{padding:18px}.field-grid{gap:12px}.footer{font-size:9px}}
+      @media(max-width:420px){.field-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.steps{font-size:9px;gap:7px}.step-divider{width:16px}}
+    </style>
+  </head>
+  <body>
+    <div class="announcement">A softer kind of everyday <span>— miễn phí vận chuyển cho đơn từ 600.000 ₫</span></div>
+    <header>
+      <nav aria-label="Main navigation">
+        <a class="brand" href="./gioithieu.html" aria-label="MELTI home"><img src="../assets/melti-mark.png" alt="" />MELTI</a>
+        <a class="nav-link" href="./gioithieu.html#shop">Keep shopping</a>
+      </nav>
+    </header>
+    <main>
+      <div class="steps" aria-label="Checkout progress"><span>1 &nbsp; Bag</span><span class="step-divider"></span><span class="step-active">2 &nbsp; Checkout</span><span class="step-divider"></span><span>3 &nbsp; Confirmation</span></div>
+      <span class="eyebrow">Almost there</span>
+      <h1>Checkout</h1>
+      <p class="intro">Add your details and choose how you would like to pay.</p>
+      <div id="checkout-content"></div>
+    </main>
+    <footer class="footer">© <span id="year"></span> MELTI · Thoughtful candles for slower days.</footer>
+    <script>
+      const PRODUCTS = {
+        "MELT INTO CALM": { price: 199000, image: "../assets/products/melt-into-calm.jpg", detail: "Soft lavender and creamy vanilla for a calming end to the day." },
+        "YOU MAKE ME SMILE": { price: 189000, image: "../assets/products/you-make-me-smile.jpg", detail: "Light floral notes with a hint of sweet fruit." },
+        "ALWAYS BY YOUR SIDE": { price: 229000, image: "../assets/products/always-by-your-side.jpg", detail: "Fresh green notes, soft woods, and a touch of sweetness." },
+        "MADE WITH LOVE": { price: 219000, image: "../assets/products/made-with-love.jpg", detail: "Romantic rose and peony with soft vanilla." },
+        "A LITTLE WARMTH": { price: 219000, image: "../assets/products/a-little-warmth.jpg", detail: "Sweet orange, white florals, and warm vanilla." },
+        "A Box of Joy": { price: 329000, image: "../assets/products/a-box-of-joy.jpg", detail: "A scented candle, plush keychain, mini bouquet, mug, and sticker set." },
+        "A Quiet Moment": { price: 249000, image: "../assets/products/a-quiet-moment.jpg", detail: "A scented candle, greeting card, wooden candle coaster, and dried pine cone." },
+        "With All My Love": { price: 279000, image: "../assets/products/with-all-my-love.jpg", detail: "A scented candle, greeting card, mini teddy bear, and wax flower." },
+      };
+      const CART_KEY = "meltiCart";
+      const ORDERS_KEY = "meltiOrders";
+      const FREE_SHIPPING_THRESHOLD = 600000;
+      const SHIPPING_FEE = 60000;
+      const money = (amount) => new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND", maximumFractionDigits: 0 }).format(amount);
+      const content = document.querySelector("#checkout-content");
+      let orderSubmissionInProgress = false;
+
+      function getCart() {
+        try {
+          const value = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+          if (!Array.isArray(value)) throw new Error("Shopping bag data is invalid.");
+          return value.filter((item) => item && PRODUCTS[item.name]).map((item) => ({
+            name: item.name, price: PRODUCTS[item.name].price, image: PRODUCTS[item.name].image,
+            qty: Math.max(1, Math.min(99, Math.floor(Number(item.qty) || 1))),
+          }));
+        } catch (error) {
+          console.error("Unable to read the MELTI shopping bag.", error);
+          return null;
+        }
+      }
+
+      function render() {
+        const cart = getCart();
+        if (cart === null) {
+          content.innerHTML = '<div class="empty"><h2>We could not load your bag.</h2><p>Please go back and try again.</p><a class="button" href="./giohang.html">Return to bag</a></div>';
+          return;
+        }
+        let selection;
+        try {
+          selection = JSON.parse(sessionStorage.getItem("meltiCheckoutSelection") || "null");
+        } catch (error) {
+          console.error("Unable to read checkout selection.", error);
+          selection = null;
+        }
+        const items = Array.isArray(selection) ? cart.filter((item) => selection.includes(item.name)) : cart;
+        if (!items.length) {
+          content.innerHTML = '<div class="empty"><h2>Your bag is empty.</h2><p>Add a candle before heading to checkout.</p><a class="button" href="./gioithieu.html#shop">Explore candles</a></div>';
+          return;
+        }
+        const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+        const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
+        content.innerHTML = `
+          <div class="layout">
+            <form id="order-form" novalidate>
+              <section class="block">
+                <h2>Contact &amp; delivery</h2>
+                <div class="field-grid">
+                  <div class="field"><label for="full-name">Full name *</label><input id="full-name" name="name" autocomplete="name" required maxlength="100"></div>
+                  <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+                  <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" title="Enter a valid phone number."></div>
+                  <div class="field"><label for="country">Country *</label><input id="country" name="country" autocomplete="country-name" required maxlength="80"></div>
+                  <div class="field full"><label for="address">Street address *</label><input id="address" name="address" autocomplete="street-address" required maxlength="200"></div>
+                  <div class="field"><label for="city">City *</label><input id="city" name="city" autocomplete="address-level2" required maxlength="100"></div>
+                  <div class="field"><label for="postal">Postal code</label><input id="postal" name="postalCode" autocomplete="postal-code" maxlength="20"></div>
+                  <div class="field full"><label for="notes">Delivery note (optional)</label><textarea id="notes" name="notes" maxlength="500"></textarea></div>
+                </div>
+              </section>
+              <section class="block">
+                <h2>Payment method</h2>
+                <div class="payment-option selected">
+                  <label><input type="radio" name="payment" value="cod" checked><span><strong>Cash on delivery</strong><small>Pay the courier when your candles arrive.</small></span></label>
+                </div>
+                <div class="payment-option">
+                  <label><input type="radio" name="payment" value="bank_transfer"><span><strong>Bank transfer</strong><small>Place your order now; transfer instructions will appear on your confirmation page.</small></span></label>
+                </div>
+                <p class="payment-note">Online card payments are not available yet. MELTI will never ask for your card details on this demo checkout.</p>
+              </section>
+              <p class="error" id="form-error" role="alert" aria-live="polite"></p>
+            </form>
+            <aside class="summary" aria-label="Order summary">
+              <h2>Your order</h2>
+              ${items.map((item) => `<div class="summary-item"><img src="${item.image}" alt="" loading="lazy"><div class="summary-product"><strong>${item.name}</strong><small>Qty ${item.qty} · ${PRODUCTS[item.name].detail}</small></div><span class="summary-price">${money(item.price * item.qty)}</span></div>`).join("")}
+              <div class="summary-row"><span>Subtotal</span><strong>${money(subtotal)}</strong></div>
+              <div class="summary-row"><span>Shipping</span><strong>${shipping ? money(shipping) : "Free"}</strong></div>
+              <div class="summary-row total"><span>Total</span><span>${money(subtotal + shipping)}</span></div>
+              <p class="shipping-note">${shipping ? `Thêm ${money(FREE_SHIPPING_THRESHOLD - subtotal)} để được miễn phí vận chuyển.` : "Đơn hàng được miễn phí vận chuyển."}</p>
+              <button class="submit" type="submit" form="order-form">Place order · ${money(subtotal + shipping)}</button>
+              <a class="back" href="./giohang.html">Back to your bag</a>
+            </aside>
+          </div>`;
+        content.querySelectorAll('input[name="payment"]').forEach((input) => {
+          input.addEventListener("change", () => {
+            content.querySelectorAll(".payment-option").forEach((option) => option.classList.toggle("selected", option.contains(input) && input.checked));
+          });
+        });
+        content.querySelector("#order-form").addEventListener("submit", (event) => placeOrder(event, items, subtotal, shipping));
+      }
+
+      function placeOrder(event, items, subtotal, shipping) {
+        event.preventDefault();
+        if (orderSubmissionInProgress) return;
+        const form = event.currentTarget;
+        const error = document.querySelector("#form-error");
+        const phone = form.elements.phone;
+        phone.setCustomValidity(
+          phone.value.replace(/\D/g, "").length < 7
+            ? "Enter a phone number with at least 7 digits."
+            : "",
+        );
+        error.textContent = "";
+        if (!form.reportValidity()) return;
+        orderSubmissionInProgress = true;
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Saving your order…";
+        const values = new FormData(form);
+        const orderId = `MLT-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+        const paymentMethod = values.get("payment");
+        const order = {
+          id: orderId,
+          createdAt: new Date().toISOString(),
+          status: paymentMethod === "bank_transfer" ? "Awaiting bank transfer" : "Confirmed — pay on delivery",
+          paymentMethod,
+          paymentStatus: paymentMethod === "bank_transfer" ? "Pending" : "Pay on delivery",
+          customer: {
+            name: String(values.get("name")).trim(),
+            email: String(values.get("email")).trim(),
+            phone: String(values.get("phone")).trim(),
+            country: String(values.get("country")).trim(),
+            address: String(values.get("address")).trim(),
+            city: String(values.get("city")).trim(),
+            postalCode: String(values.get("postalCode")).trim(),
+            notes: String(values.get("notes")).trim(),
+          },
+          items: items.map((item) => ({ name: item.name, price: item.price, image: item.image, qty: item.qty })),
+          subtotal,
+          shipping,
+          total: subtotal + shipping,
+        };
+        let previousCart;
+        let previousOrderHistory;
+        try {
+          previousCart = localStorage.getItem(CART_KEY);
+          previousOrderHistory = localStorage.getItem(ORDERS_KEY);
+        } catch (storageError) {
+          console.error("Unable to access MELTI browser storage.", storageError);
+          orderSubmissionInProgress = false;
+          submitButton.disabled = false;
+          submitButton.textContent = `Place order · ${money(subtotal + shipping)}`;
+          error.textContent = "We could not access your browser storage. Your bag is unchanged; check your browser settings and try again.";
+          return;
+        }
+        try {
+          const previousOrders = JSON.parse(previousOrderHistory || "[]");
+          if (!Array.isArray(previousOrders)) throw new Error("Saved order history is invalid.");
+          const currentCart = getCart();
+          if (currentCart === null) throw new Error("The shopping bag could not be verified.");
+          const remaining = currentCart.filter((cartItem) => !items.some((orderItem) => orderItem.name === cartItem.name));
+          localStorage.setItem(CART_KEY, JSON.stringify(remaining));
+          localStorage.setItem(ORDERS_KEY, JSON.stringify([order, ...previousOrders]));
+          sessionStorage.removeItem("meltiCheckoutSelection");
+        } catch (storageError) {
+          console.error("Unable to save the MELTI order.", storageError);
+          try {
+            if (previousCart === null) localStorage.removeItem(CART_KEY);
+            else localStorage.setItem(CART_KEY, previousCart);
+            if (previousOrderHistory === null) localStorage.removeItem(ORDERS_KEY);
+            else localStorage.setItem(ORDERS_KEY, previousOrderHistory);
+          } catch (rollbackError) {
+            console.error("Unable to restore browser data after the order save failed.", rollbackError);
+          }
+          orderSubmissionInProgress = false;
+          submitButton.disabled = false;
+          submitButton.textContent = `Place order · ${money(subtotal + shipping)}`;
+          error.textContent = "We could not save your order in this browser. Your bag is unchanged; please check storage settings and try again.";
+          return;
+        }
+        window.location.href = `./hoadon.html?order=${encodeURIComponent(orderId)}`;
+      }
+
+      document.querySelector("#year").textContent = new Date().getFullYear();
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFF8F1" />
+    <link rel="icon" href="../assets/melti-mark.png" type="image/png" />
+    <title>Your bag | MELTI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{--pink:#F8C6C6;--cream:#FFF8F1;--sand:#EEDCCF;--butter:#F8D7A7;--ink:#332B28;--muted:#82736D;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+      *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}
+      .announcement{padding:10px 20px;background:var(--ink);color:var(--cream);text-align:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase}.announcement span{color:var(--butter)}
+      header{position:sticky;top:0;z-index:5;border-bottom:1px solid #332B2814;background:#FFF8F1F2;backdrop-filter:blur(14px)}nav{width:min(1100px,calc(100% - 44px));height:74px;margin:auto;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px;letter-spacing:.16em}.brand img{width:48px;height:48px;object-fit:contain}.nav-link{font-size:12px;font-weight:600;color:#61534e}
+      main{width:min(1100px,calc(100% - 44px));min-height:65vh;margin:auto;padding:62px 0 90px}.eyebrow{color:#9c6a63;font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}h1,h2,h3{font-family:var(--serif);font-weight:500}h1{margin:10px 0 5px;font-size:clamp(38px,5vw,56px);letter-spacing:-.04em}.intro{margin:0 0 32px;color:var(--muted);font-size:12px}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(270px,.8fr);gap:44px}.cart-list{border-top:1px solid #332B2820}.cart-item{display:grid;grid-template-columns:22px 92px minmax(0,1fr) auto;align-items:center;gap:16px;padding:19px 0;border-bottom:1px solid #332B281A}.cart-item input{width:16px;height:16px;accent-color:#9c6a63}.cart-item img{width:92px;height:106px;object-fit:cover;background:var(--sand)}.item-name{margin:0 0 4px;font-family:var(--serif);font-size:18px}.item-detail{margin:0 0 9px;color:var(--muted);font-size:10px}.unit-price{font-size:11px;font-weight:700}.quantity{display:inline-flex;align-items:center;border:1px solid #332B2830}.quantity button{width:30px;height:30px;border:0;background:transparent;cursor:pointer}.quantity output{min-width:28px;text-align:center;font-size:11px}.remove{display:block;margin-top:8px;padding:0;border:0;background:none;color:#9c6a63;font-size:10px;text-decoration:underline;cursor:pointer}.line-total{align-self:start;padding-top:5px;font-size:12px;font-weight:700;white-space:nowrap}.summary{position:sticky;top:105px;height:max-content;padding:23px;background:#fffdfb;border:1px solid #332B2812}.summary h2{margin:0 0 17px;font-size:23px}.summary-row{display:flex;justify-content:space-between;gap:12px;margin:12px 0;color:#665752;font-size:11px}.summary-row.total{margin-top:17px;padding-top:16px;border-top:1px solid #332B2820;color:var(--ink);font-size:14px;font-weight:700}.hint{margin:15px 0;color:#9c6a63;font-size:10px;line-height:1.6}.button{width:100%;min-height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);background:var(--ink);color:white;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}.button:hover{background:transparent;color:var(--ink)}.button:disabled{opacity:.45;cursor:not-allowed}.button:disabled:hover{background:var(--ink);color:white}.continue{display:block;margin:16px 0 0;text-align:center;font-size:10px;color:#77645e;text-decoration:underline}.empty{padding:50px 20px;text-align:center;background:#fffdfb}.empty h2{margin:0 0 8px;font-size:29px}.empty p{color:var(--muted);font-size:12px}.empty .button{width:auto;padding:0 24px}.notice{min-height:16px;margin-top:12px;color:#9c3f3f;font-size:11px}.footer{padding:22px;text-align:center;background:var(--ink);color:#fff8f1a8;font-size:10px}
+      @media(max-width:720px){main{padding:42px 0 65px}.layout{grid-template-columns:1fr;gap:24px}.summary{position:static}.cart-item{grid-template-columns:18px 72px minmax(0,1fr) auto;gap:10px}.cart-item img{width:72px;height:90px}.line-total{font-size:11px}.item-name{font-size:16px}.footer{font-size:9px}}
+    </style>
+  </head>
+  <body>
+    <div class="announcement">A softer kind of everyday <span>— miễn phí vận chuyển cho đơn từ 600.000 ₫</span></div>
+    <header>
+      <nav aria-label="Main navigation">
+        <a class="brand" href="./gioithieu.html" aria-label="MELTI home">
+          <img src="../assets/melti-mark.png" alt="" />MELTI
+        </a>
+        <a class="nav-link" href="./gioithieu.html#shop">Continue shopping</a>
+      </nav>
+    </header>
+    <main>
+      <span class="eyebrow">Your MELTI edit</span>
+      <h1>Your bag<span id="item-count"></span></h1>
+      <p class="intro">The good stuff is almost yours.</p>
+      <div id="cart-content" aria-live="polite"></div>
+    </main>
+    <footer class="footer">© <span id="year"></span> MELTI · Thoughtful candles for slower days.</footer>
+    <script>
+      const PRODUCTS = {
+        "MELT INTO CALM": { price: 199000, image: "../assets/products/melt-into-calm.jpg", detail: "Soft lavender and creamy vanilla for a calming end to the day." },
+        "YOU MAKE ME SMILE": { price: 189000, image: "../assets/products/you-make-me-smile.jpg", detail: "Light floral notes with a hint of sweet fruit." },
+        "ALWAYS BY YOUR SIDE": { price: 229000, image: "../assets/products/always-by-your-side.jpg", detail: "Fresh green notes, soft woods, and a touch of sweetness." },
+        "MADE WITH LOVE": { price: 219000, image: "../assets/products/made-with-love.jpg", detail: "Romantic rose and peony with soft vanilla." },
+        "A LITTLE WARMTH": { price: 219000, image: "../assets/products/a-little-warmth.jpg", detail: "Sweet orange, white florals, and warm vanilla." },
+        "A Box of Joy": { price: 329000, image: "../assets/products/a-box-of-joy.jpg", detail: "A scented candle, plush keychain, mini bouquet, mug, and sticker set." },
+        "A Quiet Moment": { price: 249000, image: "../assets/products/a-quiet-moment.jpg", detail: "A scented candle, greeting card, wooden candle coaster, and dried pine cone." },
+        "With All My Love": { price: 279000, image: "../assets/products/with-all-my-love.jpg", detail: "A scented candle, greeting card, mini teddy bear, and wax flower." },
+      };
+      const STORAGE_KEY = "meltiCart";
+      const FREE_SHIPPING_THRESHOLD = 600000;
+      const SHIPPING_FEE = 60000;
+      const content = document.querySelector("#cart-content");
+      const money = (amount) => new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND", maximumFractionDigits: 0 }).format(amount);
+
+      function getCart() {
+        try {
+          const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+          if (!Array.isArray(value)) throw new Error("Shopping bag data is invalid.");
+          return value.filter((item) => item && PRODUCTS[item.name]).map((item) => ({
+            name: item.name,
+            price: PRODUCTS[item.name].price,
+            image: PRODUCTS[item.name].image,
+            qty: Math.max(1, Math.min(99, Math.floor(Number(item.qty) || 1))),
+          }));
+        } catch (error) {
+          console.error("Unable to read the MELTI shopping bag.", error);
+          return null;
+        }
+      }
+
+      function saveCart(cart) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+          return true;
+        } catch (error) {
+          console.error("Unable to save the MELTI shopping bag.", error);
+          document.querySelector("#cart-notice").textContent = "Your browser could not save this change. Please check storage settings and try again.";
+          return false;
+        }
+      }
+
+      function render() {
+        const cart = getCart();
+        if (cart === null) {
+          content.innerHTML = '<div class="empty"><h2>We could not load your bag.</h2><p>Please refresh this page or check your browser storage settings.</p><a class="button" href="./gioithieu.html#shop">Back to the shop</a></div>';
+          return;
+        }
+        const count = cart.reduce((sum, item) => sum + item.qty, 0);
+        document.querySelector("#item-count").textContent = count ? ` (${count})` : "";
+        if (!cart.length) {
+          content.innerHTML = '<div class="empty"><h2>Your bag is taking a little break.</h2><p>Find a candle that feels like you.</p><a class="button" href="./gioithieu.html#shop">Explore candles</a></div>';
+          return;
+        }
+        const savedSelection = JSON.parse(sessionStorage.getItem("meltiCheckoutSelection") || "null");
+        const selected = Array.isArray(savedSelection) ? savedSelection : cart.map((item) => item.name);
+        const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+        const selectedSubtotal = cart.reduce((sum, item) => sum + (selected.includes(item.name) ? item.price * item.qty : 0), 0);
+        const shipping = selectedSubtotal === 0 || selectedSubtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FEE;
+        content.innerHTML = `
+          <div class="layout">
+            <section class="cart-list" aria-label="Items in your bag">
+              ${cart.map((item, index) => `
+                <article class="cart-item">
+                  <input type="checkbox" aria-label="Select ${item.name}" data-action="select" data-index="${index}" ${selected.includes(item.name) ? "checked" : ""}>
+                  <img src="${item.image}" alt="${item.name}" loading="lazy">
+                  <div>
+                    <h2 class="item-name">${item.name}</h2>
+                    <p class="item-detail">${PRODUCTS[item.name].detail}</p>
+                    <span class="unit-price">${money(item.price)}</span>
+                    <div class="quantity" aria-label="Quantity">
+                      <button type="button" aria-label="Decrease ${item.name} quantity" data-action="decrease" data-index="${index}">−</button>
+                      <output>${item.qty}</output>
+                      <button type="button" aria-label="Increase ${item.name} quantity" data-action="increase" data-index="${index}">+</button>
+                    </div>
+                    <button class="remove" type="button" data-action="remove" data-index="${index}">Remove</button>
+                  </div>
+                  <span class="line-total">${money(item.price * item.qty)}</span>
+                </article>`).join("")}
+            </section>
+            <aside class="summary" aria-label="Order summary">
+              <h2>Order summary</h2>
+              <div class="summary-row"><span>Bag subtotal</span><strong>${money(subtotal)}</strong></div>
+              <div class="summary-row"><span>Selected items</span><strong>${money(selectedSubtotal)}</strong></div>
+              <div class="summary-row"><span>Shipping</span><strong>${selectedSubtotal === 0 ? "—" : shipping ? money(shipping) : "Free"}</strong></div>
+              <div class="summary-row total"><span>Due at checkout</span><span>${money(selectedSubtotal + shipping)}</span></div>
+              <p class="hint">${selectedSubtotal > 0 && selectedSubtotal < FREE_SHIPPING_THRESHOLD ? `Thêm ${money(FREE_SHIPPING_THRESHOLD - selectedSubtotal)} vào đơn đã chọn để được miễn phí vận chuyển.` : selectedSubtotal >= FREE_SHIPPING_THRESHOLD ? "Đơn hàng được miễn phí vận chuyển." : "Vui lòng chọn ít nhất một sản phẩm để tiếp tục."}</p>
+              <button class="button" type="button" data-action="checkout" ${selectedSubtotal === 0 ? "disabled" : ""}>Continue to checkout</button>
+              <p class="notice" id="cart-notice" role="status" aria-live="polite"></p>
+              <a class="continue" href="./gioithieu.html#shop">Continue shopping</a>
+            </aside>
+          </div>`;
+        content.querySelectorAll("[data-action]").forEach((control) => {
+          if (control.type === "checkbox") {
+            control.addEventListener("change", handleSelection);
+          } else {
+            control.addEventListener("click", () => handleAction(control));
+          }
+        });
+      }
+
+      function handleSelection() {
+        const selectedNames = [...content.querySelectorAll('[data-action="select"]:checked')].map((checkbox) => getCart()?.[Number(checkbox.dataset.index)]?.name).filter(Boolean);
+        sessionStorage.setItem("meltiCheckoutSelection", JSON.stringify(selectedNames));
+        render();
+      }
+
+      function handleAction(control) {
+        const cart = getCart();
+        if (!cart) return;
+        const index = Number(control.dataset.index);
+        const action = control.dataset.action;
+        if (action === "checkout") {
+          const selectedNames = [...content.querySelectorAll('[data-action="select"]:checked')].map((checkbox) => cart[Number(checkbox.dataset.index)]?.name).filter(Boolean);
+          if (!selectedNames.length) return;
+          sessionStorage.setItem("meltiCheckoutSelection", JSON.stringify(selectedNames));
+          window.location.href = "./checkout.html";
+          return;
+        }
+        if (action === "remove") cart.splice(index, 1);
+        if (action === "increase") cart[index].qty = Math.min(99, cart[index].qty + 1);
+        if (action === "decrease") {
+          if (cart[index].qty === 1) cart.splice(index, 1);
+          else cart[index].qty -= 1;
+        }
+        const selected = JSON.parse(sessionStorage.getItem("meltiCheckoutSelection") || "[]");
+        sessionStorage.setItem("meltiCheckoutSelection", JSON.stringify(selected.filter((name) => cart.some((item) => item.name === name))));
+        if (saveCart(cart)) render();
+      }
+
+      window.addEventListener("storage", (event) => {
+        if (event.key === STORAGE_KEY) render();
+      });
+      document.querySelector("#year").textContent = new Date().getFullYear();
+      render();
+    </script>
+  </body>
+</html>
